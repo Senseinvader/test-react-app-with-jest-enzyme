@@ -6,8 +6,9 @@ import {shallow} from 'enzyme';
 describe('App component', () => {
     it('Starts counter with 0', () => {
         const wrapper = shallow(<App/>);
+        const text = wrapper.find('p').text();
         const counterState = wrapper.state().counter;
-        expect(counterState).toEqual(0);
+        expect(text).toEqual('Counter: 0');
     })
     it('renders without crashing', () => {
         const div = document.createElement('div');

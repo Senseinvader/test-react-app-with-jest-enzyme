@@ -23,7 +23,7 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                 </header>
                 <div>
-                    <h3>Counter: {this.state.counter}</h3>
+                    <p>Counter: {this.state.counter}</p>
                     <button onClick={this.handleIncrement}>Increment</button>
                 </div>
             </div>
