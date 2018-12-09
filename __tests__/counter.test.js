@@ -2,6 +2,7 @@ import React from 'react';
 import Counter from '../src/components/counter';
 import {shallow} from 'enzyme';
 import renderer from 'react-test-renderer';
+import './setup/setupTests';
 
 describe('App component', () => {
 

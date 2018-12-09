@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Counter from './components/counter';
+import CounterList from './components/counter-list';
 
 class App extends Component {
 
@@ -11,7 +11,7 @@ class App extends Component {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                 </header>
-                <Counter/>
+                <CounterList/>
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../src/App';
-import renderer from 'react-test-renderer';
+import './setup/setupTests';
 
 describe('App component', () => {
 
@@ -10,8 +10,8 @@ describe('App component', () => {
         ReactDOM.render(<App />, div);
         ReactDOM.unmountComponentAtNode(div);
         });
-    it('matches the snapshot', () => {
-       const tree = renderer.create(<App/>).toJSON();
-       expect(tree).toMatchSnapshot();
-    });
+    // it('matches the snapshot', () => {
+    //    const tree = renderer.create(<App/>).toJSON();
+    //    expect(tree).toMatchSnapshot();
+    // });
 })
