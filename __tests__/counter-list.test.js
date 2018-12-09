@@ -11,9 +11,16 @@ describe('counter list', () => {
     });
     it('adds one more Counter by clicking add button', () => {
         const wrapper = shallow(<CounterList/>);
-        const btn = wrapper.find('button');
+        const btn = wrapper.find('button.add-counter');
         btn.simulate('click');
         const counters = wrapper.find('Counter');
         expect(counters.length).toEqual(2);
+    });
+    it('deletes one Counter by clicking remove button', () => {
+        const wrapper = shallow(<CounterList/>);
+        const btn = wrapper.find('button.remove-counter');
+        btn.simulate('click');
+        const counters = wrapper.find('Counter');
+        expect(counters.length).toEqual(0);
     });
 })

@@ -15,13 +15,19 @@ class CounterList extends Component {
         }))
     };
 
+    handleRemoveCounter = () => {
+        this.setState((prevState) => ({
+            countersNum: prevState.countersNum - 1
+        }))
+    };
+
     renderCounter = (num) => {
         return (
             <li key={num}>
                 <Counter/>
             </li>
         )
-    }
+    };
 
     render() {
         const countersArray = createRange(this.state.countersNum);
@@ -29,6 +35,7 @@ class CounterList extends Component {
         return (
             <div>
                 <button className='add-counter' onClick={this.handleAddCounter}>Add counter</button>
+                <button className='remove-counter' onClick={this.handleRemoveCounter}>Remove counter</button>
                 <ul>
                     {countersArray.map((num) => this.renderCounter(num))}
                 </ul>
