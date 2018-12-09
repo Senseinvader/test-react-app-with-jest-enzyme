@@ -9,17 +9,14 @@ class CounterList extends Component {
         countersNum: 1
     }
 
-    handleAddCounter = () => {
+    makeCounters = (amount) => () => {
         this.setState((prevState) => ({
-            countersNum: prevState.countersNum + 1
+            countersNum: prevState.countersNum + amount
         }))
     };
 
-    handleRemoveCounter = () => {
-        this.setState((prevState) => ({
-            countersNum: prevState.countersNum - 1
-        }))
-    };
+    handleAddCounter = this.makeCounters(1);
+    handleRemoveCounter = this.makeCounters(-1);
 
     renderCounter = (num) => {
         return (
