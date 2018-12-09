@@ -8,21 +8,14 @@ class App extends Component {
         counter: 0,
     }
 
-    handleIncrement = () => {
-        this.setState(prevState => {
-            return {
-                counter: prevState.counter + 1
-            };
-        })
+    makeIncrementer = amount => () => {
+        this.setState(prevState => ({
+           counter: prevState.counter + amount
+        }))
     }
 
-    handleDecrement = () => {
-        this.setState(prevState => {
-            return {
-                counter: prevState.counter - 1
-            };
-        })
-    }
+    handleIncrement = this.makeIncrementer(1);
+    handleDecrement = this.makeIncrementer(-1);
 
     render() {
         return (
