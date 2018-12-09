@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {shallow} from 'enzyme';
+import renderer from 'react-test-renderer';
 
 describe('App component', () => {
     it('Starts counter with 0', () => {
@@ -29,4 +30,8 @@ describe('App component', () => {
         ReactDOM.render(<App />, div);
         ReactDOM.unmountComponentAtNode(div);
         });
+    it('matches the snapshot', () => {
+        const tree = renderer.create(<App/>).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 })
