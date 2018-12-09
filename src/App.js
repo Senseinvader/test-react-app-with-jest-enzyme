@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Counter from './components/counter';
 
 class App extends Component {
-
-    state = {
-        counter: 0,
-    }
-
-    makeIncrementer = amount => () => {
-        this.setState(prevState => ({
-           counter: prevState.counter + amount
-        }))
-    }
-
-    handleIncrement = this.makeIncrementer(1);
-    handleDecrement = this.makeIncrementer(-1);
 
     render() {
         return (
@@ -23,11 +11,7 @@ class App extends Component {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                 </header>
-                <div>
-                    <p>Counter: {this.state.counter}</p>
-                    <button onClick={this.handleIncrement} className='increment'>+++</button>
-                    <button onClick={this.handleDecrement} className='decrement'>---</button>
-                </div>
+                <Counter/>
             </div>
         );
     }
